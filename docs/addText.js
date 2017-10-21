@@ -1,6 +1,11 @@
 function addItem(){
 	if(e.keyCode == 13) {
 		var item = document.getElementById('itemInput').value;
-		document.getElementById('fullList').value += item;
+		var fullText = document.getElementById('fullList').value;
+		fullText.appendChild(item);
+	}
+	else{
+		var fullText = document.getElementById('fullList').value;
+		fullText ="Bread";
 	}
 }
