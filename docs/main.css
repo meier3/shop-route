@@ -52,8 +52,12 @@ div {
 	box-shadow: 0px 0px 20px #666;
 }
 
-.btn {
-	padding: 15px;
-	background-color: #D3D3D3;
+#calcButton.btn{
+	background-color: #b4c190;
+}
 
+.btn {
+	padding: 5px;
+	margin-top: 15px;
+	width: 100%;
 }
