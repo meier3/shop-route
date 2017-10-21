@@ -13,8 +13,8 @@ var section;//array of strings with names of sections for store color coding
 
 
 function setup() {
-  w = Math.min($("#content").height(), $("#content").width());//width
-  h = w;//height
+  w =525;//width
+  h = 525;//height
   side = 150; //Sidebar for selection
   colorAmount = 10;
   section = new Array(colorAmount+1);// +1 is a hidden color saved for items
