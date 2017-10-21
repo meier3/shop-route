@@ -82,10 +82,6 @@ form div {
 	width: 100%;
 }
 
-.form-group{
-	padding:5px;
-}
-
 #input{
 	width: 95%;
 	padding:5px;
@@ -95,7 +91,7 @@ input.iteminput{
 	width: 75%;
 }
 
-.form{
+.form {
 	background-color: #ffffff;
 }
 
