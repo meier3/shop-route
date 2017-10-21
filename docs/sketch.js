@@ -95,8 +95,10 @@ function draw(){
       stroke(0);
     }
     // Labels for colors
-    text(section[i], w+(.25*side)+ppt+5,  ppt*5+i*ppt+10);
-    rect( w+(.25*side),  ppt*5+i*ppt   , ppt-1 , ppt-1 )
+    textSize(18);
+    rect( w+(.25*side),  ppt*5+i*ppt*2   , ppt*7 , ppt*2 )
+    fill(0);
+    text(section[i], w+(.25*side)+ppt+5,  ppt*5+i*ppt*2+20);
   }
 }
 
