@@ -1,0 +1,98 @@
+Applesauce, 2
+Baby Food, 9
+Baking Nuts, 4
+Bath Soap, 10
+Body Soap, 10
+Tissues, 11
+BBQ Sauce, 3
+Bottled Juice, 6
+Boxed Dinners, 2
+Boxed Potato/Stuffing, 2
+Bread, 2
+Buns, 2
+Breakfast Cereal, 2
+Brooms, 10
+Mops, 10
+Cake Mix, 4
+Brownie Mix, 4
+Candy, 5
+Canned Fruit, 2
+Canned Tomatoes, 2
+Canned Vegetables, 2
+Charcoal, 8
+Chips, 7
+Cleaners, 10
+Cocoa, 4
+Hot Chocolate, 4
+Coffee, 4
+Cookies, 6
+Cooking Oil, 4
+Corn Syrup, 4
+Cough Drops, RX
+Dental Care, RX
+Deodorant, RX
+Diapers, 9
+Dish Soap, 10
+Dried beans, 2
+Dried Fruit, 4
+Eye Care, RX
+Facial Tissue, 11
+Feminine Care, 10
+First Aid, RX
+Fish, 2
+Flour, 4
+Frozen Food, 11
+Frozen Food, 12
+Frozen Food, 13
+Fruit Snacks, 5
+Gelatin, 4
+Hair Care, RX
+Hardware, 10
+Hispanic Foods, 3
+Ketchup, 3
+Mustard, 3
+Laundry Supplies, 10
+Light Bulbs & Electrical, 8
+Meat, 2
+Oriental Foods, 3
+Pian Relief, Rx
+Pancake Mix, 5
+Syrup, 5
+Paper Towels, 11
+Pasta, 3
+Pasta Sauce, 3
+Peanut Butter, 5
+Jelly, 5
+Pet Care, 9
+Dog Food, 9
+Cat Food, 9
+Pickles, 3
+Olives, 3
+Pie Filling, 4
+Plastic Bags, 10
+Plastic Wrap, 10
+Plates, 11
+Cups, 11
+Napkins, 11
+Pudding, 4
+Razors, RX
+Rice, 3
+Salad Dressing, 3
+Salsa, 7
+Saltines, 6
+School Supplies, 8
+Snack Crackers, 6
+Soda, 8
+Pop, 8
+Soup, 2
+Spices, 4
+Sponges, 10
+Sugar, 4
+Tea, 4
+Trash bags, 10
+Vinegar, 3
+
+
+
+
+
