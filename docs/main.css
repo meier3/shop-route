@@ -86,7 +86,7 @@ div.form-group {
 	width: 100%;
 }
 
-input.iteminput{
+input#iteminput{
 	width: 60%;
 }
 
