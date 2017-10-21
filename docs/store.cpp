@@ -23,3 +23,8 @@ string store::get_name(){
 int store::get_max_aisles(){
 	return max_aisles;
 }
+
+void store::print(){
+	cout<<"Max_Aisles: "<<max_aisles<<endl;
+	cout<<"Name: "<<name<<endl;
+}
