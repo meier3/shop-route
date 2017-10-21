@@ -18,6 +18,7 @@ function setup() {
   side = 150; //Sidebar for selection
   colorAmount = 10;
   section = new Array(colorAmount);
+  selectionNum=0;
   /////////////
   section[0]="Hallway";
   section[1]="Entrance";
@@ -85,8 +86,6 @@ function draw(){
     text(section[i], w+(.25*side)+ppt+5,  ppt*5+i*ppt+10);
     rect( w+(.25*side),  ppt*5+i*ppt   , ppt-1 , ppt-1 )
   }
-
-
 }
 
 //Key press for color selection
