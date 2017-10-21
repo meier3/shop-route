@@ -90,7 +90,8 @@ input.iteminput{
 	width: 60%;
 }
 
-textarea{
+textarea#fullList{
 	resize: vertical;
 	width: 100%;
+	height: 300px;
 }
