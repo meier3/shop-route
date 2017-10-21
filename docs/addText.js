@@ -1,12 +1,16 @@
-function addItem(e){
-	e = e || window.event;
-    var code = e.keyCode;
-	if(code == 32){
-		var item = document.getElementById("itemInput").value;
+function addItem(){
+		var e = document.getElementById("itemDrop");
+		var item = e.options[e.selectedIndex].text;
 		//var fullText = document.getElementById("fullList").value;
 		//fullText += item;
 		document.getElementById('fullList').append(item + '\n');
 		//document.getElementById("fullList").append(base);
-		document.getElementById("itemInput").value = "";
-	}
+		//document.getElementById("itemInput").value = "";
+}
+
+function validateForm(e) {
+    if (e.preventDefault) {
+       e.preventDefault();
+    }
+    e.returnValue = false; // for IE
 }
