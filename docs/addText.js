@@ -7,6 +7,6 @@ function addItem(e){
 		//fullText += item;
 		document.getElementById('fullList').append(item + '\n');
 		//document.getElementById("fullList").append(base);
-		document.getElementById("itemInput").value = "\0";
+		document.getElementById("itemInput").value = "";
 	}
 }
