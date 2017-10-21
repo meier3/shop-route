@@ -55,6 +55,7 @@ div {
 	width: 50%;
 	margin-right: 5%;
 	min-width: 350px;
+<<<<<<< HEAD
 }
 
 #footer {
@@ -64,4 +65,17 @@ div {
 	margin: 0 auto;
 	position: absolute;
 	bottom: 0;
+=======
+	box-shadow: 0px 0px 20px #666;
+}
+
+#calcButton.btn{
+	background-color: #b4c190;
+}
+
+.btn {
+	padding: 5px;
+	margin-top: 15px;
+	width: 100%;
+>>>>>>> f2ff344654eaf85b89aea381e6d134b44c4662e5
 }
