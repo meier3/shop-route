@@ -95,3 +95,7 @@ textarea#fullList{
 	width: 100%;
 	height: 300px;
 }
+
+#defaultCanvas0{
+	visibility: visible;
+}
