@@ -1,3 +1,7 @@
+
+//DISCONTINUED
+//possibly forever
+
 var ppt; //pixels per tile
 var columns;
 var rows;
@@ -5,15 +9,16 @@ var grid;
 var w;
 var h;
 var colorAmount;
+var mapData;
 
-
-function preLoad(){
-  importMapData();
+function preload(){
+  mapData = loadJSON("map.json");
 }
 
 function setup() {
-
-  printMapData();
+  print("MAP DATA: ",mapData);
+  //importMapData();
+  //printMapData();
 
   w=720;//width
   h=720;//height
@@ -74,5 +79,13 @@ function printMapData(){
 }
 
 function importMapData(){
-  grid = loadStrings('Saves/map');
+  var count = 0;
+  print("Map Data: ", mapData);
+
+  for(var i = 0; i < columns; i++){
+    for(var j = 0; j < rows; j++){
+      grid[i][j]=mapData[count];
+      count++;
+    }
+  }
 }
