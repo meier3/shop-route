@@ -27,7 +27,7 @@ function setup() {
   section[6]="Deli";
   section[7]="Bakery";
   section[8]="Produce";
-  section[9]="Exit";
+  section[9]="Wall";
 
   /////////////
   currentColor = color(255,255,255,255);
