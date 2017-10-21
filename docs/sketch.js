@@ -52,12 +52,24 @@ function setup() {
       grid[i][j]=0;
     }
   }
-  //Random Color selection
+  // Color selection
   selection = new Array(colorAmount);
   selection[0]=color(255,255,255);
+  selection[1]=color(170, 255, 195);
+  selection[2]=color(0, 130, 200);
+  selection[3]=color(245, 130, 48);
+  selection[4]=color(145, 30, 180);
+  selection[5]=color(70, 240, 240);
+  selection[6]=color(250, 190, 190);
+  selection[7]=color(255, 215, 180);
+  selection[8]=color(60, 180, 75);
+  selection[9]=color(128, 0, 0);
+
+  /*
   for(var i = 1; i < colorAmount; i++){
     selection[i] = color(random(255),random(255),random(255));
   }
+  */
 }
 
 
