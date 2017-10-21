@@ -99,3 +99,18 @@ textarea#fullList{
 #defaultCanvas0{
 	visibility: visible;
 }
+
+#header img {
+	margin-left: 50px;
+	margin-top: 6px;
+	position: absolute;
+}
+
+#header p {
+	display: inline;
+	margin-left: 195px;
+	font-style: italic;
+	color: dimgray;
+	font-size: 18px;
+	font-family: Raleway, sans-serif;
+}
