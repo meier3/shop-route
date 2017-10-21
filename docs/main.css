@@ -26,6 +26,7 @@ form div.form-group {
 	width: 90%;
 	height: 85px;
 	margin: auto;
+	margin-bottom: 10px;
 }
 
 #header h3 {
@@ -45,7 +46,7 @@ form div.form-group {
 
 .page {
 	padding: 5px;
-	height: 75%;
+	height: 77%;
 	margin-top: 10px;
 }
 
@@ -64,13 +65,16 @@ form div.form-group {
 }
 
 #footer {
-	height: 50px;
+	height: 25px;
 	width: 100%;
 	left: 0;
 	margin: 0 auto;
 	position: absolute;
 	bottom: 0;
 	text-align: center;
+	font-size: 15px;
+	padding-top: 7px;
+	color: rgba(0,0,0,0.5)
 }
 
 #calcButton.btn{
