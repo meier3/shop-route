@@ -5,7 +5,6 @@ function addItem(){
 		fullText.appendChild(item);
 	}
 	else{
-		var fullText = document.getElementById('fullList').value;
-		fullText ="Bread";
+		document.getElementById('fullList').value = "bread";
 	}
 }
