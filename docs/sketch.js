@@ -62,7 +62,7 @@ function setup() {
 
 
 function draw(){
-  background(150);
+  background(148, 176, 1, 10);
   //Selection Grid
   for ( var i = 0; i < columns;i++) {
     for ( var j = 0; j < rows;j++) {
