@@ -23,30 +23,34 @@
 		</div>
 		
 		<div id="sidebar" class="page">
-			<form class="form-horizontal">
+
+			<script src="addText.js"> </script>
+			<form class="form-horizontal" action="">
 				<fieldset>
 
 				<!-- Form Name -->
 				<legend>Your Shopping List</legend>
 
+				<br>
+
 				<!-- Input-->
 				<div class="fullForm">
 				<div class="form-group">
-				  <label class="col-md-4 control-label">Enter Item: <input type="Text" class="iteminput"></label>
+				  <label class="col-md-4 control-label">Enter Item: <input type="Text" id="iteminput" onkeypress="addItem()"</label>
 				  <div class="col-md-4"> 
 				  </div>
 				</div>
 				<br>
-				<!-- Select Multiple -->
+				<!-- Select Multiple 
 				<div class="form-group">
 				  <label class="col-md-4 control-label">Current List</label>
 				  <div class="col-md-4">
 				    <select id="fullList" name="fullList" class="form-control" multiple="multiple">
 				    </select>
 				  </div>
-				</div>
+				</div> 
 				<br>
-
+					-->
 				<!-- Button 
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="removeButton"></label>
@@ -55,19 +59,20 @@
 				  </div>
 				</div> -->
 
-				<!-- Textarea 
+				<!-- Textarea -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="textarea">Current List:</label>
 				  <div class="col-md-4">                     
-				    <textarea class="form-control" id="textarea" name="textarea"></textarea>
+				    <textarea class="form-control" id="fullList" name="textarea"></textarea>
 				  </div>
-				</div>-->
+				</div>
+				<br>
 
 				<!-- Button -->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="calcButton"></label>
 				  <div class="col-md-4">
-				    <button id="calcButton" name="calcButton" class="btn">Calculate Route</button>
+				    <button id="calcButton" name="calcButton" class="btn" onkeypress="addItem()">Calculate Route</button>
 				  </div>
 				</div>
 				<br>
