@@ -13,9 +13,10 @@ public:
 
   void set_name(string n);
   void set_max_aisles(int i);
-  
+
   int get_name();
 
+  void print();
 };
 
 #endif

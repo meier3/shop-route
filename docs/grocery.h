@@ -16,10 +16,12 @@ public:
   void set_aisle(int a);
   void set_item(string i);
   void set_selection(string s);
-  
+
   int get_aisle();
   string get_item();
   string get_section();
+
+  void print();
 };
 
 #endif

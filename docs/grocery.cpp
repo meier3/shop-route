@@ -35,3 +35,9 @@ string grocery::get_item(){
 string grocery::get_section(){
 	return section;
 }
+
+void grocery::print(){
+  cout<<"Aisle: "<<aisle<<endl;
+  cout<<"Section: "<<section<<endl;
+  cout<<"Item: "<<item<<endl;
+}
