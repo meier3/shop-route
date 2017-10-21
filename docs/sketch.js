@@ -11,13 +11,14 @@ var currentColor;
 var selectionNum;//Num of currently selected color
 
 function setup() {
-  w=720;//width
-  h=720;//height
-  side = 240; //Sidebar for selection
+  w = Math.min($("#content").height(), $("#content").width());//width
+  h = w;//height
+  side = 50; //Sidebar for selection
   colorAmount = 10;
   currentColor = color(255,255,255,255);
   // Create the canvas
-  createCanvas(w+side, h);
+  var canvas = createCanvas(w+side, h);
+	canvas.parent('content');
 
   ppt = 15;
   columns = floor(w/ppt);
