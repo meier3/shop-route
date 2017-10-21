@@ -17,7 +17,7 @@ body {
 	box-shadow: 0px 0px 20px #666;
 }
 
-form div.form-group {
+div.form-group {
 	background-color: rgba(256,256,256,0);
 	margin-bottom: 20px;
 }
