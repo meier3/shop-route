@@ -1,4 +1,4 @@
-<?php include('header.html'); ?>
+<!DOCTYPE>
 <html>
 
 	<head>
