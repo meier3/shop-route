@@ -82,13 +82,8 @@ form div {
 	width: 100%;
 }
 
-#input{
-	width: 95%;
-	padding:5px;
-}
-
 input.iteminput{
-	width: 75%;
+	width: 70%;
 }
 
 .form {
