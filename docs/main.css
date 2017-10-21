@@ -90,3 +90,7 @@ input.iteminput{
 	width: 60%;
 }
 
+textarea{
+	resize: vertical;
+	width: 100%;
+}
