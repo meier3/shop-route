@@ -9,12 +9,27 @@ var selection;//color array
 var colorAmount;
 var currentColor;
 var selectionNum;//Num of currently selected color
+var section;//array of strings with names of sections for store color coding
 
 function setup() {
   w=720;//width
   h=720;//height
   side = 240; //Sidebar for selection
   colorAmount = 10;
+  section = new Array(colorAmount);
+  /////////////
+  section[0]="Hallway";
+  section[1]="Entrance";
+  section[2]="Aisle 1";
+  section[3]="Aisle 2";
+  section[4]="Aisle 3";
+  section[5]="Aisle 4";
+  section[6]="Deli";
+  section[7]="Bakery";
+  section[8]="Produce";
+  section[9]="Wall";
+
+  /////////////
   currentColor = color(255,255,255,255);
   selectionNum=0;
   // Create the canvas
@@ -60,13 +75,16 @@ function draw(){
   for(var i = 0; i < colorAmount; i++){
     fill(selection[i]);
     if(i==selectionNum){
-      stroke(255,255,255);
+      stroke(200);
     }else{
       stroke(0);
     }
-
+    // Labels for colors
+    text(section[i], w+(.5*side)+ppt+2,  ppt*5+i*ppt+10);
     rect( w+(.5*side),  ppt*5+i*ppt   , ppt-1 , ppt-1 )
   }
+
+
 }
 
 //Key press for color selection
@@ -105,9 +123,6 @@ function keyPressed(){
     case 13:
       printMapData();
       break;
-    case 16:
-      exportMapData();
-      break;
   }
   currentColor = selection[selectionNum];
   print("Selection = ", selectionNum);
@@ -128,11 +143,27 @@ function mouseDragged(){
 function printMapData(){
   for(var i = 0; i < columns; i++){
     for(var j = 0; j < rows; j++){
-      print(i," ",j,": ",grid[i][j]);
+      print(grid[i][j]);
     }
   }
 }
 
+
+/*
 function exportMapData(){
-  saveStrings(grid,'map.txt');
+
+  var content = "";
+  for(var i = 0; i < columns; i++){
+    for(var j = 0; j < rows; j++){
+      content+=grid[i][j];
+    }
+  }
+  saveJSON(content,"map")
+
+  //print("Content: ", content);
+  uriContent = "data:application/octet-stream," + encodeURIComponent(content);
+  newWindow = window.open(uriContent, 'map.txt');
+  //saveStrings(data,'map.txt');
+
 }
+*/

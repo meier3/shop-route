@@ -9,12 +9,29 @@ var selection;//color array
 var colorAmount;
 var currentColor;
 var selectionNum;//Num of currently selected color
+var section;//array of strings with names of sections for store color coding
+
 
 function setup() {
   w = Math.min($("#content").height(), $("#content").width());//width
   h = w;//height
-  side = 50; //Sidebar for selection
+  side = 150; //Sidebar for selection
   colorAmount = 10;
+  section = new Array(colorAmount);
+  selectionNum=0;
+  /////////////
+  section[0]="Hallway";
+  section[1]="Entrance";
+  section[2]="Aisle 1";
+  section[3]="Aisle 2";
+  section[4]="Aisle 3";
+  section[5]="Aisle 4";
+  section[6]="Deli";
+  section[7]="Bakery";
+  section[8]="Produce";
+  section[9]="Wall";
+
+  /////////////
   currentColor = color(255,255,255,255);
   // Create the canvas
   var canvas = createCanvas(w+side, h);
@@ -32,24 +49,38 @@ function setup() {
 
   for(var i = 0; i < columns; i++){
     for(var j = 0; j < rows; j++){
-      grid[i][j]=color(255,255,255);
+      grid[i][j]=0;
     }
   }
-
+  // Color selection
   selection = new Array(colorAmount);
-  for(var i = 0; i < colorAmount; i++){
+  selection[0]=color(255,255,255);
+  selection[1]=color(170, 255, 195);
+  selection[2]=color(0, 130, 200);
+  selection[3]=color(245, 130, 48);
+  selection[4]=color(145, 30, 180);
+  selection[5]=color(70, 240, 240);
+  selection[6]=color(250, 190, 190);
+  selection[7]=color(255, 215, 180);
+  selection[8]=color(60, 180, 75);
+  selection[9]=color(128, 0, 0);
+
+  /*
+  for(var i = 1; i < colorAmount; i++){
     selection[i] = color(random(255),random(255),random(255));
   }
+  */
 }
 
+
 function draw(){
-  background(200);
+  background(148, 176, 1, 10);
   //Selection Grid
   for ( var i = 0; i < columns;i++) {
     for ( var j = 0; j < rows;j++) {
       //print("GridCOlorinDraw: ", grid[i][j]);
-      fill(grid[i][j]);
-
+      fill(selection[grid[i][j]]);
+      //print("GRID: ", grid[i][j]);
       stroke(0);
       rect(i*ppt, j*ppt, ppt-1, ppt-1);
     }
@@ -59,12 +90,15 @@ function draw(){
   for(var i = 0; i < colorAmount; i++){
     fill(selection[i]);
     if(i==selectionNum){
-      stroke(255,255,255);
+      stroke(200);
     }else{
       stroke(0);
     }
-
-    rect( w+(.5*side),  ppt*5+i*ppt   , ppt-1 , ppt-1 )
+    // Labels for colors
+    textSize(18);
+    rect( w+(.25*side),  ppt*5+i*ppt*2   , ppt*7 , ppt*2 )
+    fill(0);
+    text(section[i], w+(.25*side)+ppt+5,  ppt*5+i*ppt*2+20);
   }
 }
 
@@ -100,6 +134,9 @@ function keyPressed(){
       break;
     case 48:
       selectionNum=9;
+    case 13:
+      printMapData();
+      break;
   }
   currentColor = selection[selectionNum];
   print("Selection = ", selectionNum);
@@ -113,6 +150,14 @@ function mouseDragged(){
   x = floor(mouseX/ppt);
   y = floor(mouseY/ppt);
   print("gridX: ", x, " gridY: ", y);
-  grid[x][y]=currentColor;
+  grid[x][y]=selectionNum;
   print("Grid Color: ",grid[x][y]);
+}
+
+function printMapData(){
+  for(var i = 0; i < columns; i++){
+    for(var j = 0; j < rows; j++){
+      print(grid[i][j]);
+    }
+  }
 }
