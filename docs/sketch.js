@@ -17,7 +17,7 @@ function setup() {
   h = w;//height
   side = 150; //Sidebar for selection
   colorAmount = 10;
-  section = new Array(colorAmount);
+  section = new Array(colorAmount+1);// +1 is a hidden color saved for items
   selectionNum=0;
   /////////////
   section[0]="Hallway";
@@ -64,6 +64,7 @@ function setup() {
   selection[7]=color(255, 215, 180);
   selection[8]=color(60, 180, 75);
   selection[9]=color(128, 0, 0);
+  selection[10]=color(255,255,25); //item color
 
   /*
   for(var i = 1; i < colorAmount; i++){
@@ -137,6 +138,9 @@ function keyPressed(){
     case 13:
       printMapData();
       break;
+    case 187:
+      loadDemoMap();
+      break;
   }
   currentColor = selection[selectionNum];
   print("Selection = ", selectionNum);
@@ -161,3 +165,71 @@ function printMapData(){
     }
   }
 }
+
+function itemSquare( x,  y){
+  grid[x][y]=10;
+}
+
+
+// This function is for demo only
+function loadDemoMap(){
+  var testMap = Array(columns);
+  testMap[0] = "99999999999999999999999999999999009";
+  testMap[1] = "92000000000000000000009999999999009";
+  testMap[2] = "92000000000000000000000999999999009";
+  testMap[3] = "92002300340044000000000099999999009";
+  testMap[4] = "92002300340044000000000099999999009";
+  testMap[5] = "92002300340044000000000099999999009";
+  testMap[6] = "92002300340044000000000099999999009";
+  testMap[7] = "92002300340044000000000009999999119";
+  testMap[8] = "92002300340044000000000000000000009";
+  testMap[9] = "92002300340044000000055005500000009";
+  testMap[10] = "92002300340044000000055005500000009";
+  testMap[11] = "92002300340040000000055005500000009";
+  testMap[12] = "92002300340040000000055005500000009";
+  testMap[13] = "92002300340040066600055005500000009";
+  testMap[14] = "92000000000000066600055005500000009";
+  testMap[15] = "99000000000000066600055005500000009";
+  testMap[16] = "99999999999999966600055005500000009";
+  testMap[17] = "99999999999999966600055005500000009";
+  testMap[18] = "99777777777770066600055005500000009";
+  testMap[19] = "97777777777770066600000000000000009";
+  testMap[20] = "97700000000000066600000000000000009";
+  testMap[21] = "97700000000000000000000000000000009";
+  testMap[22] = "97700000000000000000000000000000009";
+  testMap[23] = "97700000000000666000000000000000009";
+  testMap[24] = "90000000000006666000000000000000001";
+  testMap[25] = "90000000000006600000000008800880001";
+  testMap[26] = "90777777777006600000000008800880009";
+  testMap[27] = "90777777777000000000000008800880009";
+  testMap[28] = "90000000000000000000000008800880009";
+  testMap[29] = "90000000000000000000000008800880089";
+  testMap[30] = "99990000000000000000000000000000089";
+  testMap[31] = "99990000000000000000000000000000089";
+  testMap[32] = "99990000000000666666668888888888889";
+  testMap[33] = "99999999999999999999999999999999999";
+
+  for(var i = 0; i<columns; i++){
+      for(var j = 0; j < rows; j++){
+        grid[i][j]=testMap[i].charAt(j);
+      }
+  }
+}
+/////////////////////////////////
+/*
+function exportMapData(){
+
+  var content = "";
+  for(var i = 0; i < columns; i++){
+    for(var j = 0; j < rows; j++){
+      content+=grid[i][j];
+    }
+  }
+  //print("Content: ", content);
+  uriContent = "data:application/octet-stream," + encodeURIComponent(content);
+  newWindow = window.open(uriContent, 'map.txt');
+  //saveStrings(data,'map.txt');
+
+}
+*/
+////////////////////////////////
