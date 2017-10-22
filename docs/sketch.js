@@ -84,6 +84,7 @@ function draw(){
       fill(selection[grid[i][j]]);
       //print("GRID: ", grid[i][j]);
       stroke(230);
+      //stroke(random(255));
       rect(i*ppt, j*ppt, ppt-1, ppt-1);
     }
   }
@@ -91,11 +92,16 @@ function draw(){
   //Color choices
   for(var i = 0; i < colorAmount; i++){
     fill(selection[i]);
+
     if(i==selectionNum){
       stroke(200);
     }else{
       stroke(0);
     }
+
+    //stroke(color(random(255),random(255),random(255)));
+
+
     // Labels for colors
     textSize(18);
     rect( w+(.1*side),  ppt*5+i*ppt*2   , ppt*8 , ppt*2 )
@@ -162,13 +168,34 @@ function keyPressed(){
 //Paint on Map
 function mouseDragged(){
   //print("Clicked");
-  //print("MouseX: ", mouseX, " MouseY: ", mouseY);
+  print("MouseX: ", mouseX, " MouseY: ", mouseY);
   x = floor(mouseX/ppt);
   y = floor(mouseY/ppt);
   //print("gridX: ", x, " gridY: ", y);
   grid[x][y]=selectionNum;
   //print("Grid Color: ",grid[x][y]);
 }
+
+function mousePressed(){
+  //  rect( w+(.1*side),  ppt*5+i*ppt*2   , ppt*8 , ppt*2 )
+  if(mouseInColorRect(0)){selectionNum=0}
+  else if(mouseInColorRect(1)){selectionNum=1}
+  else if(mouseInColorRect(2)){selectionNum=2}
+  else if(mouseInColorRect(3)){selectionNum=3}
+  else if(mouseInColorRect(4)){selectionNum=4}
+  else if(mouseInColorRect(5)){selectionNum=5}
+  else if(mouseInColorRect(6)){selectionNum=6}
+  else if(mouseInColorRect(7)){selectionNum=7}
+  else if(mouseInColorRect(8)){selectionNum=8}
+  else if(mouseInColorRect(9)){selectionNum=9}
+}
+
+function mouseInColorRect(num){
+  // rect( w+(.1*side),  ppt*5+i*ppt*2   , ppt*8 , ppt*2 )
+  if(mouseX>w+(.1*side)&&mouseX<w+(.1*side)+ppt*8  &&  mouseY>ppt*5+num*ppt*2&&mouseY<ppt*5+num*ppt*2+ppt*2) return true;
+  else return false;
+}
+
 
 function printMapData(){
   for(var i = 0; i < columns; i++){
@@ -218,16 +245,13 @@ function determineType(x,y){
 }
 
 
-
-
-
-
-
-
-
-
-
-
+function clearMap(){
+  for(var i = 0; i < columns; i++){
+    for(var j = 0; j < rows; j++){
+      grid[i][j] = 0;
+    }
+  }
+}
 
 
 
