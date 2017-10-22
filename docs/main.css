@@ -1,5 +1,6 @@
 * {
-	font-family: sans-serif;
+	font-family: Source Sans Pro, sans-serif;
+	                                supported by Chrome and Opera */
 }
 
 a {
@@ -37,8 +38,10 @@ div.form-group {
 	color: darkgreen;
 	font-size: 50px;
 	margin: 20px;
-	font-family: 'Kaushan Script', cursive;
+	font-family: 'Kaushan Script', sans-serif;
 	display: inline;
+	cursor: pointer;
+
 }
 
 #header h4 {
@@ -48,24 +51,40 @@ div.form-group {
 	color: ghostwhite;
 }
 
-.page {
-	padding: 5px;
-	height: 77%;
-	margin-top: 10px;
+.page-wrapper {
+	text-align: center;
+	width: 90%;
+	height: 500px;
 }
 
-#sidebar {
-	width: 25%;
+.page {
+	height: 77%;
+	margin-top: 10px;
+	padding: 5px;
+	margin-top: 0;
+}
+
+#left-sidebar {
+	width: 20%;
 	min-width: 200px;
 	float: left;
 	margin-left: 5%;
 }
 
-#content {
-	float: right;
-	width: 60%;
+#map {
+	width: 675px;
 	margin-right: 5%;
-	min-width: 350px;
+	display: inline;
+	left: 0;
+	right: 0;
+	margin: 0 auto;
+	position: absolute;
+}
+
+#right-sidebar {
+	width: 20%;
+	float: right;
+	margin-right: 5%;
 }
 
 #footer {
@@ -117,4 +136,16 @@ textarea#fullList{
 	color: dimgray;
 	font-size: 18px;
 	font-family: Raleway, sans-serif;
+}
+
+.noselect {
+	cursor: default;
+	
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+
 }

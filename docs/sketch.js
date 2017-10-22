@@ -36,7 +36,7 @@ function setup() {
   currentColor = color(255,255,255,255);
   // Create the canvas
   var canvas = createCanvas(w+side, h);
-	canvas.parent('content');
+	canvas.parent('map');
 
   ppt = 15;
   columns = floor(w/ppt);
