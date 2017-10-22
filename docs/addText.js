@@ -16,16 +16,8 @@ function validateForm(e) {
 }
 
 function clearList(){
-<<<<<<< HEAD
-	var f = document.getElementById("fullList");
+<	var f = document.getElementById("fullList");
 	f.value=" ";
-=======
-	var e = document.getElementById("fullList");
-	e.value = "";
-<<<<<<< HEAD
->>>>>>> 253b0ba3a91b5d923a008643899475ef0e4070f7
-=======
->>>>>>> 253b0ba3a91b5d923a008643899475ef0e4070f7
 }
 
 function setMap() {
