@@ -17,4 +17,7 @@ function validateForm(e) {
     e.returnValue = false; // for IE
 }
 
-
+function clearList(){
+	var e = document.getElementById("fullList");
+	e.value="";
+}
