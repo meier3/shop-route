@@ -25,34 +25,41 @@ body {
 .page, #header, #footer {
 	background-color: rgba(256,256,256,0.5);
 	box-shadow: 0px 0px 20px #666;
+	border-radius: 2px;
 }
 
 div.form-group {
-	background-color: rgba(256,256,256,0);
-	margin-bottom: 20px;
+	margin-bottom: 5px;
 }
 
 #header {
-	width: 90%;
-	height: 85px;
+	width: 75%;
+	height: 100px;
 	margin: auto;
-	margin-bottom: 20px;
+	margin-bottom: 2%;
 }
 
 #header h3 {
 	color: darkgreen;
 	font-size: 50px;
-	margin: 20px;
+	margin: 10px 20px 0px 30px;
 	font-family: 'Kaushan Script', sans-serif;
-	display: inline;
+	display: inline-flex;
 	cursor: pointer;
 }
 
 #header h4 {
 	font-family: 'Chelsea Market', cursive;
-	display: inline;
+	display: inline-flex;
 	font-size: 25px;
 	color: ghostwhite;
+	margin-top: 0px
+}
+
+#header img {
+	margin-left: 50px;
+	margin-top: 10px;
+	position: absolute;
 }
 
 #header p {
@@ -64,34 +71,20 @@ div.form-group {
 	font-family: 'Raleway', sans-serif;
 }
 
-.page {
-	height: 77%;
-	margin-top: 10px;
-	padding: 5px;
-	margin-top: 0;
-}
-
 #left-sidebar {
-	width: 20%;
-	min-width: 200px;
+	width: 24%;
+	height: 550px;
 	float: left;
-	margin-left: 5%;
+	margin-left: 12.5%;
+	padding: 5px 15px 0px;
 }
 
 #map {
 	width: 675px;
 	height: 525px;
-	margin-right: 5%;
-	left: 0;
-	right: 0;
-	margin: 0px auto;
-	position: absolute;
-}
-
-#right-sidebar {
-	width: 20%;
-	float: right;
-	margin-right: 5%;
+	float: right;	
+	margin-right: 12.5%;
+	padding: 15px;
 }
 
 #footer {
@@ -128,12 +121,6 @@ textarea#fullList{
 
 #defaultCanvas0{
 	visibility: visible;
-}
-
-#header img {
-	margin-left: 50px;
-	margin-top: 6px;
-	position: absolute;
 }
 
 .noselect {
