@@ -191,7 +191,7 @@ function getItems(sec){
 
         aisleLocations.push(i);
         aisleLocations.push(j);
-        =
+        
       }
     }
   }

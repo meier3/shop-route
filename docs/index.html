@@ -9,14 +9,14 @@
 		<meta name="description" content="Team page for Ole Guacamole @ HackISU">
 		<link rel="stylesheet" href="main.css">
 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-		
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 		<meta name="viewport" width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0>
 
 	</head>
 
 	<body>
-		
+
 	<!--- HEADER -->
 		<div id="header">
 			<a href="/"><h3 class="noselect">Shopping App</h3></a>
@@ -24,13 +24,13 @@
 			<img src="imgs/bread.png" height="70px">
 			<p class="noselect">Pasta? We have water!</p>
 		</div>
-		
+
 	<!--- CONTENTS -->
 		<div id="page-wrapper">
-			
+
 			<div id="left-sidebar" class="page">
-				
-				<script src="addText.js" src="aisles.js"></script>				
+
+				<script src="addText.js"></script>
 				<form class="form-horizontal" action="" onsubmit="validateForm(event)">
 					<fieldset>
 
@@ -49,7 +49,7 @@
 						<!-- Input-->
 						<div class="fullForm">
 
-							<label>Select an item: 
+							<label>Select an item:
 						<select class="food" id="itemDrop">
 							  <option value="">Select Item</option>
 							  <option value="p">Apples</option>
@@ -101,22 +101,22 @@
 		<!--
 						<div class="form-group">
 						  <label class="col-md-4 control-label">Enter Items Separated With a Space: <input type="Text" id="itemInput" onkeypress="addItem(event)"></label>
-						  <div class="col-md-4"> 
+						  <div class="col-md-4">
 						  </div>
 						</div>
 						<br>
 		-->
-						<!-- Select Multiple 
+						<!-- Select Multiple
 						<div class="form-group">
 						  <label class="col-md-4 control-label">Current List</label>
 						  <div class="col-md-4">
 							 <select id="fullList" name="fullList" class="form-control" multiple="multiple">
 							 </select>
 						  </div>
-						</div> 
+						</div>
 						<br>
 							-->
-						<!-- Button 
+						<!-- Button
 						<div class="form-group">
 						  <label class="col-md-4 control-label" for="removeButton"></label>
 						  <div class="col-md-4">
@@ -127,7 +127,7 @@
 						<!-- Textarea -->
 						<div class="form-group">
 						  <label class="col-md-4 control-label" for="textarea">Current List:</label>
-						  <div class="col-md-4">                     
+						  <div class="col-md-4">
 							 <textarea disabled class="form-control" id="fullList" name="textarea"></textarea>
 						  </div>
 						</div>
@@ -140,8 +140,8 @@
 							 <button id="calcButton" name="calcButton" class="btn" onclick="getAisle()">calculate</button>
 						  </div>
 						</div>
-					
-						<!-- File Button  
+
+						<!-- File Button
 						<div class="form-group">
 						  <label class="col-md-4 control-label" for="filebutton">Upload a List:</label>
 						  <div class="col-md-4">
@@ -154,7 +154,7 @@
 				</div>
 
 			<div id="map" class="page">
-				<div id="jsGrid">	
+				<div id="jsGrid">
 					<script src="addons/p5.min.js"></script>
 					<script src="addons/p5.dom.min.js"></script>
 					<script src="addons/p5.sound.min.js"></script>
@@ -162,16 +162,16 @@
 				</div>
 			</div>
 
-			
+
 			<div id="right-sidebar" class="page">
-				
+
 			</div>
-			
+
 		</div>
-		
+
 		<div id="footer">
 			&copy; Ole Guacamole &nbsp; &nbsp;|&nbsp; &nbsp; MLH HackISU 2017
 		</div>
-	
-	</body>	
+
+	</body>
 </html>
