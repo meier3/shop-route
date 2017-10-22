@@ -64,10 +64,6 @@ div.form-group {
 	font-family: 'Raleway', sans-serif;
 }
 
-#page-wrapper {
-	
-}
-
 .page {
 	height: 77%;
 	margin-top: 10px;
@@ -111,8 +107,8 @@ div.form-group {
 	color: rgba(0,0,0,0.5)
 }
 
-#calcButton.btn{
-	background-color: #b4c190;
+form .btn{
+	background-color: #c9d6a5;
 }
 
 .btn {
