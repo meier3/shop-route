@@ -351,7 +351,7 @@ function getAisle(){
     initItem = initItem.trim();
     var myChar = findAisle(initItem);
     //console.log("my itEM: " + initItem);
-    //getItems(myChar);
+    getItems(myChar);
   }
 
 }
