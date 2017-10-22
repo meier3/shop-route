@@ -188,25 +188,16 @@ function getItems(sec){
       var type = determineType(i,j);
       //print("Type:b/f if: ",type);
       if(type == sec){
-        print("I: ", i," J: ",j);
-        //print("Type: ",type);
-        //var xy = xyCoord(i,j);
+
         aisleLocations.push(i);
         aisleLocations.push(j);
-        print("AISLE I: ", aisleLocations[aisleLocations.length-2]);
-        print("AISLE J: ", aisleLocations[aisleLocations.length-1])
-
-        print("aisleLocations #: ",aisleLocations.length/2);
+        =
       }
     }
   }
-  for(var i = 0; i < aisleLocations.length; i++){
-    print(aisleLocations[i]);
-  }
+
   var temp = floor(random((aisleLocations.length/2)))*2;
-  print("Rand: ", temp);
-  print("X Coord: ", aisleLocations[temp]);
-  print("Y Coord: ", aisleLocations[temp+1]);
+
   //grid[aisleLocations[temp].getX][aisleLocations[temp].getY]=10; //Yellow
   grid[aisleLocations[temp]][aisleLocations[temp+1]]=10; //Yellow
 
@@ -350,6 +341,7 @@ function getAisle(){
     var initItem = arrayOfLines[i];
     initItem = initItem.trim();
     var myChar = findAisle(initItem);
+    console.log("aisle"+myChar);
     //console.log("my itEM: " + initItem);
     getItems(myChar);
   }
