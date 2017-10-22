@@ -19,6 +19,7 @@ function validateForm(e) {
 function clearList(){
 	var f = document.getElementById("fullList");
 	f.value=" ";
+	 window.location.reload();
 }
 
 function setMap() {
@@ -29,7 +30,3 @@ function setMap() {
 	else if (map == 0)
 		clearMap();
 }
-
-function refreshPage(){
-    window.location.reload();
-} 
