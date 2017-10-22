@@ -66,6 +66,7 @@ function setup() {
   selection[8]=color(60, 180, 75);
   selection[9]=color(128, 0, 0);
   selection[10]=color(255,255,25); //item color
+  selection[11]=color(200,50,50); //path color
 
   /*
   for(var i = 1; i < colorAmount; i++){
@@ -142,23 +143,6 @@ function keyPressed(){
       break;
     case 48:
       selectionNum=9;
-    case 13:
-      printMapData();
-      break;
-    case 187:
-      loadDemoMap();
-      break;
-      /*
-    case 66:
-      getItems('b');
-      break;
-    case 68:
-      getItems('d');
-      break;
-    case 80:
-      getItems('p');
-      break;
-      */
   }
   currentColor = selection[selectionNum];
   //print("Selection = ", selectionNum);
@@ -210,26 +194,20 @@ function getItems(sec){
   aisleLocations = new Array();
   //aisleLocations[0] = new Array(1); // X cord
   //aisleLocations[1] = new Array(1); // Y cord
-
-
   for(var i = 0; i < columns; i++){
     for(var j = 0; j < rows; j++){
       var type = determineType(i,j);
       //print("Type:b/f if: ",type);
       if(type == sec){
-
         aisleLocations.push(i);
         aisleLocations.push(j);
-
       }
     }
   }
 
   var temp = floor(random((aisleLocations.length/2)))*2;
-
   //grid[aisleLocations[temp].getX][aisleLocations[temp].getY]=10; //Yellow
   grid[aisleLocations[temp]][aisleLocations[temp+1]]=10; //Yellow
-
 }
 
 function determineType(x,y){
@@ -251,6 +229,130 @@ function clearMap(){
       grid[i][j] = 0;
     }
   }
+}
+
+//Here we go, the big shibang
+function pathGen(){
+  //Local vars
+  var cur = new Array(2); //x and y of current location
+  var stopSigns = new Array(); // all coords of stops
+
+  print("Check 1");
+  //get array of yellow square locations
+  for(var i = 0; i < columns; i++){
+    for(var j = 0; j < rows; j++){
+      if(grid[i][j]==10){
+        stopSigns.push(i);
+        stopSigns.push(j);
+      }
+    }
+  }
+  print("Check 2");
+  //starting location for cur (location of search)
+  for(var i = 0; i < columns; i++){
+    for(var j = 0; j < rows; j++){
+      if(grid[i][j]==1){
+        cur[0]=i;
+        cur[1]=j;
+      }
+    }
+  }
+  print("Check 3");
+  var nextStop; //Declared outside while to use after to splice out array
+  //while there are unvisited stops
+  while(stopSigns.length>0){
+    print("Check 4: Enter stopsign while");
+    //find closest stop to cur
+    var distances = new Array(stopSigns.length/2);
+
+    for(var i = 0; i < stopSigns.length; i+=2){ // +=2 b/c stopsigns stores x next to y values
+      distances[i] = distance(cur[0],cur[1], stopSigns[i],stopSigns[i+1]);
+    }
+    console.log(distances);
+    nextStop = determineClosest(distances);//returns location in distances array of shortest travel
+    var nextStopSign = new Array(2);
+    nextStopSign[0] = stopSigns[nextStop*2];    // X      *2 b/c of x and y storage in one array
+    nextStopSign[1] = stopSigns[(nextStop*2)+1];// Y
+
+    ////////HARD/////STEP/////////
+    //best path to the stop (as close as you can get in the hall spaces)
+    //set found path to red squares   (possible slow animation style)
+    //////////////////////////////
+    while(canGetCloser(cur,nextStopSign)){
+
+      var adj = new Array(8) //adjacent tiles to cur
+      adj[0] = cur[0];  //North
+      adj[1] = cur[1]-1;
+      adj[2] = cur[0]+1;  //East
+      adj[3] = cur[1];
+      adj[4] = cur[0];  //South
+      adj[5] = cur[1]+1;
+      adj[6] = cur[0]-1;  //West
+      adj[7] = cur[1];
+      console.log("CURR: X: "+cur[0]+" Y: "+cur[1]);
+      console.log("N: "+grid[adj[0]][adj[1]]);
+      console.log("\t"+adj[0]+" "+adj[1]);
+      console.log("E: "+grid[adj[2]][adj[3]]);
+      console.log("\t"+adj[2]+" "+adj[3]);
+      console.log("S: "+grid[adj[4]][adj[5]]);
+      console.log("\t"+adj[4]+" "+adj[5]);
+      console.log("W: "+grid[adj[6]][adj[7]]);
+      console.log("\t"+adj[6]+" "+adj[7]);
+
+      for(var i = 0; i < adj.length; i+=2){ // Cull non hallwayers
+
+        if( grid[adj[i]][adj[i+1]] != 0 ){ //If not a hallway
+          //console.log("CUT: "+adj[i]+" "+adj[i+1]);
+          //console.log("B/C: "+grid[adj[i]][adj[i+1]]);
+          adj.splice(i,2);  //remove the x and y from the search
+        }
+      }
+      var dist = new Array(adj.length/2);
+      for(var i = 0; i < adj.length; i+=2){
+        dist[i/2] = distance(adj[i],adj[i+1] , nextStopSign[0], nextStopSign[1]);//fill array of distances of search adj tile -> closest stop sign
+      }
+      console.log("Dist:(ARR): "+dist);
+      var nextCur = determineClosest(dist);
+      console.log("NextCur: #"+nextCur)
+      grid[cur[0]][cur[1]] = 11;  //Current square color change
+      draw();
+      cur[0] = adj[nextCur*2]  // Move cur
+      cur[1] = adj[nextCur*2+1]
+
+
+    }
+     stopSigns.splice(nextStop*2,2);     //Splce out Stop Sign
+  }
+}
+
+function distance(x1,y1,x2,y2){
+  var a = x1 - x2;
+  var b = y1 - y2;
+
+  return Math.sqrt( a*a + b*b );
+}
+
+function determineClosest(distanceAt){
+  var lowest = distanceAt[0];
+  var location=0;
+  for(var i = 0; i < distanceAt.length; i++){
+    for(var j = i; j < distanceAt.length; j++){
+      if(distanceAt[i]<lowest){
+        location = i;
+        lowest = distanceAt[i];
+      }
+    }
+  }
+  return location;
+}
+
+function canGetCloser(cur,nextStopSign){
+  if(distance(cur[0],cur[1] , nextStopSign[0],nextStopSign[1]  > ppt )) return true; // more than one grid square away
+  else{
+
+    return false;
+  }
+
 }
 
 
@@ -371,7 +473,8 @@ function getAisle(){
     console.log("my itEM: " + initItem);
     getItems(myChar);
   }
-
+  //-----Not functional---
+  //pathGen(); //Creates a red path for user to follow through store
 }
 /////////////////////////////////
 /*
