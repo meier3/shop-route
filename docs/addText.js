@@ -1,5 +1,3 @@
-
-
 function addItem(){
 		var e = document.getElementById("itemDrop");
 		var item = e.options[e.selectedIndex].text;
@@ -20,4 +18,14 @@ function validateForm(e) {
 function clearList(){
 	var e = document.getElementById("fullList");
 	e.value="";
+}
+
+function setMap() {
+	var e = document.getElementById("maps");
+	var map = e.selectedIndex;
+	print(map);
+	if (map == 1)
+		loadDemoMap();
+	else if (map == 0)
+		clearMap();
 }
