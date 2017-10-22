@@ -29,3 +29,7 @@ function setMap() {
 	else if (map == 0)
 		clearMap();
 }
+
+function refreshPage(){
+    window.location.reload();
+} 
