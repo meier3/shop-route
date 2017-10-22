@@ -21,16 +21,16 @@ function setup() {
   section = new Array(colorAmount+1);// +1 is a hidden color saved for items
   selectionNum=0;
   /////////////
-  section[0]="Hallway";
-  section[1]="Entrance";
-  section[2]="Aisle 1";
-  section[3]="Aisle 2";
-  section[4]="Aisle 3";
-  section[5]="Aisle 4";
-  section[6]="Deli";
-  section[7]="Bakery";
-  section[8]="Produce";
-  section[9]="Wall";
+  section[0]="1: Hallway";
+  section[1]="2: Entrance";
+  section[2]="3: Aisle 1";
+  section[3]="4: Aisle 2";
+  section[4]="5: Aisle 3";
+  section[5]="6: Aisle 4";
+  section[6]="7: Deli";
+  section[7]="8: Bakery";
+  section[8]="9: Produce";
+  section[9]="0: Wall";
 
   /////////////
   currentColor = color(255,255,255,255);
@@ -98,9 +98,9 @@ function draw(){
     }
     // Labels for colors
     textSize(18);
-    rect( w+(.25*side),  ppt*5+i*ppt*2   , ppt*7 , ppt*2 )
+    rect( w+(.1*side),  ppt*5+i*ppt*2   , ppt*8 , ppt*2 )
     fill(0);
-    text(section[i], w+(.25*side)+ppt+5,  ppt*5+i*ppt*2+20);
+    text(section[i], w+(.1*side)+ppt+5,  ppt*5+i*ppt*2+20);
   }
 }
 
@@ -296,7 +296,7 @@ var aisleID = [
   ['2', "Canned Fruit"],
   ['2', "Canned Tomatoes"],
   ['1', "Cereal"],
-  ['e', "Charcoal"],
+  ['4', "Charcoal"],
   ['d', "Cheese"],
   ['3', "Chips"],
   ['4', "Cleaners"],
