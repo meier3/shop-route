@@ -26,7 +26,8 @@
 		
 		<div id="sidebar" class="page">
 
-			<script src="addText.js"> </script>
+			<script src="addText.js"
+					src="aisles.js"> </script>
 			<form class="form-horizontal" action="" onsubmit="validateForm(event)">
 				<fieldset>
 
@@ -126,7 +127,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="calcButton"></label>
 				  <div class="col-md-4">
-				    <button id="calcButton" name="calcButton" class="btn" onkeypress="addItem()">calculate</button>
+				    <button id="calcButton" name="calcButton" class="btn" onclick="getAisle()">calculate</button>
 				  </div>
 				</div>
 				<br>
