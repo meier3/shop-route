@@ -133,9 +133,6 @@ textarea#fullList{
 }
 
 @media only screen and (max-width: 500px) {
-	body {
-		background-color: blue;
-	}
     .page, #header {
 		 width: 100%;
     }
