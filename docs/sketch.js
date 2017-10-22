@@ -142,6 +142,7 @@ function keyPressed(){
     case 187:
       loadDemoMap();
       break;
+      /*
     case 66:
       getItems('b');
       break;
@@ -151,6 +152,7 @@ function keyPressed(){
     case 80:
       getItems('p');
       break;
+      */
   }
   currentColor = selection[selectionNum];
   //print("Selection = ", selectionNum);
