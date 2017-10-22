@@ -1,4 +1,4 @@
-src="sketch.js";
+ src="sketch.js"
 
 var aisleID = [
 	['p', "Apples"],
