@@ -26,6 +26,7 @@
 		</div>
 
 	<!--- CONTENTS -->
+<<<<<<< HEAD
 		<div id="page-wrapper">
 			
 			<script src="addText.js"> </script>
@@ -44,137 +45,140 @@
 					</fieldset>
 				</form>
 			</div>
+=======
+>>>>>>> aa53c3c19dd8cec116e6fdc756343f4e5ca67590
 
-			<div id="map" class="page">
-				<div id="jsGrid">
-					<script src="addons/p5.min.js"></script>
-					<script src="addons/p5.dom.min.js"></script>
-					<script src="addons/p5.sound.min.js"></script>
-					<script src="sketch.js"></script>
-				</div>
-			</div>
+		<script src="addText.js"> </script>
+		<script src="aisles.js"></script>
 
-			<div id="right-sidebar" class="page">
-				
-				<form class="form-horizontal" action="" onsubmit="validateForm(event)">
-					<fieldset>
-						<legend>Your Shopping List</legend>
-						
-						<div class="fullForm">
-							
-							<label>Select an item:
-								<select class="food" id="itemDrop">
-								  <option value="">Select Item</option>
-								  <option value="p">Apples</option>
-								  <option value="4">Baby Food</option>
-								  <option value="1">Baking Nuts</option>
-								  <option value="4">Bath / Body Soap</option>
-								  <option value="4">Bathroom Tissue</option>
-								  <option value="p">Bananas</option>
-								  <option value="2">BBQ Sauce</option>
-								  <option value="3">Juice</option>
-								  <option value="2">Bread</option>
-								  <option value="4">Broom / Mop</option>
-								  <option value="b">Cakes</option>
-								  <option value="2">Candy</option>
-								  <option value="2">Canned Fruit</option>
-								  <option value="2">Canned Tomatoes</option>
-								  <option value="1">Cereal</option>
-								  <option value="e">Charcoal</option>
-								  <option value="d">Cheese</option>
-								  <option value="3">Chips</option>
-								  <option value="4">Cleaners</option>
-								  <option value="2">Coffee</option>
-								  <option value="1">Cooking Oil</option>
-								  <option value="1">Corn Syrup</option>
-								  <option value="4">Cough Drops</option>
-								  <option value="3">Dried Fruit</option>
-								  <option value="4">First Aid</option>
-								  <option value="1">Flour</option>
-								  <option value="4">Frozen Food</option>
-								  <option value="3">Fruit Snacks</option>
-								  <option value="3">Ketchup</option>
-								  <option value="4">Laundry Supplies</option>
-								  <option value="4">Paper Towels</option>
-								  <option value="2">Pasta</option>
-								  <option value="4">Pet Care</option>
-								  <option value="d">Pickles</option>
-								  <option value="p">Salad</option>
-								  <option value="4">Soft Drinks</option>
-								  <option value="2">Soup</option>
-								  <option value="1">Sugar</option>
-								  <option value="4">Trash Bags</option>
-								  <option value="1">Vinegar</option>
-								</select>
-								<button id="addItemButton" onclick="addItem()">add</button>
-							</label>
-						</div>
-		<!--
-						<div class="form-group">
-						  <label class="col-md-4 control-label">Enter Items Separated With a Space: <input type="Text" id="itemInput" onkeypress="addItem(event)"></label>
-						  <div class="col-md-4">
-						  </div>
-						</div>
-						<br>
-		-->
-						<!-- Select Multiple
-						<div class="form-group">
-						  <label class="col-md-4 control-label">Current List</label>
-						  <div class="col-md-4">
-							 <select id="fullList" name="fullList" class="form-control" multiple="multiple">
-							 </select>
-						  </div>
-						</div>
-						<br>
-							-->
-						<!-- Button
-						<div class="form-group">
-						  <label class="col-md-4 control-label" for="removeButton"></label>
-						  <div class="col-md-4">
-							 <button id="removeButton" name="removeButton" class="btn">Remove Item</button>
-						  </div>
-						</div> -->
 
-						<!-- Textarea -->
-						<div class="form-group">
-						  <label class="col-md-4 control-label" for="textarea">Current List:</label>
-						  <div class="col-md-4">
-							 <textarea disabled class="form-control" id="fullList" name="textarea"></textarea>
-						  </div>
-						</div>
-						<br>
+		<div id="left-sidebar" class="page">
 
-						<!-- Button -->
-						<div class="form-group">
-						  <label class="col-md-4 control-label" for="calcButton"></label>
-						  <div class="col-md-4">
-							 <button id="calcButton" name="calcButton" class="btn" onclick="getAisle()">Calculate</button>
-						  </div>
-						</div>
-					
-						<div class="form-group">
-						  <label class="col-md-4 control-label" for="clearButton"></label>
-						  <div class="col-md-4">
-							 <button id="clearButton" name="clearButton" class="btn" onclick="clearList()">Clear</button>
-						  </div>
-						</div>
-
-						<!-- File Button
-						<div class="form-group">
-						  <label class="col-md-4 control-label" for="filebutton">Upload a List:</label>
-						  <div class="col-md-4">
-							 <input id="filebutton" name="filebutton" class="input-file" type="file">
-						  </div>
-						</div>-->
+			<form class="form-horizontal" action="" onsubmit="validateForm(event)">
+				<fieldset>
+					<legend>Change Map</legend>
+					<select id="maps" style="width:50%;">
+					  <option value="new">*create new</option>
+					  <option value="demo">Demo</option>
+					</select>
+					<button id="chooseMapButton" onclick="setMap()">Choose Map</button>
 				</fieldset>
 			</form>
-				
+
+			<form class="form-horizontal" action="" onsubmit="validateForm(event)">
+				<fieldset>
+					<legend>Your Shopping List</legend>
+					<div class="fullForm">
+						<label>Select an item:
+							<select class="food" id="itemDrop">
+							  <option value="">Select Item</option>
+							  <option value="p">Apples</option>
+							  <option value="4">Baby Food</option>
+							  <option value="1">Baking Nuts</option>
+							  <option value="4">Bath / Body Soap</option>
+							  <option value="4">Bathroom Tissue</option>
+							  <option value="p">Bananas</option>
+							  <option value="2">BBQ Sauce</option>
+							  <option value="3">Juice</option>
+							  <option value="2">Bread</option>
+							  <option value="4">Broom / Mop</option>
+							  <option value="b">Cakes</option>
+							  <option value="2">Candy</option>
+							  <option value="2">Canned Fruit</option>
+							  <option value="2">Canned Tomatoes</option>
+							  <option value="1">Cereal</option>
+							  <option value="e">Charcoal</option>
+							  <option value="d">Cheese</option>
+							  <option value="3">Chips</option>
+							  <option value="4">Cleaners</option>
+							  <option value="2">Coffee</option>
+							  <option value="1">Cooking Oil</option>
+							  <option value="1">Corn Syrup</option>
+							  <option value="4">Cough Drops</option>
+							  <option value="3">Dried Fruit</option>
+							  <option value="4">First Aid</option>
+							  <option value="1">Flour</option>
+							  <option value="4">Frozen Food</option>
+							  <option value="3">Fruit Snacks</option>
+							  <option value="3">Ketchup</option>
+							  <option value="4">Laundry Supplies</option>
+							  <option value="4">Paper Towels</option>
+							  <option value="2">Pasta</option>
+							  <option value="4">Pet Care</option>
+							  <option value="d">Pickles</option>
+							  <option value="p">Salad</option>
+							  <option value="4">Soft Drinks</option>
+							  <option value="2">Soup</option>
+							  <option value="1">Sugar</option>
+							  <option value="4">Trash Bags</option>
+							  <option value="1">Vinegar</option>
+							</select>
+							<button id="addItemButton" onclick="addItem()">add</button>
+						</label>
+					</div>
+
+					<!-- Select Multiple
+					<div class="form-group">
+					  <label class="col-md-4 control-label">Current List</label>
+					  <div class="col-md-4">
+						 <select id="fullList" name="fullList" class="form-control" multiple="multiple">
+						 </select>
+					  </div>
+					</div>
+					<br>
+						-->
+					<!-- Button
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="removeButton"></label>
+					  <div class="col-md-4">
+						 <button id="removeButton" name="removeButton" class="btn">Remove Item</button>
+					  </div>
+					</div> -->
+
+					<!-- Textarea -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="textarea">Current List:</label>
+					  <div class="col-md-4">
+						 <textarea disabled class="form-control" id="fullList" name="textarea"></textarea>
+					  </div>
+					</div>
+
+					<!-- Button -->
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="calcButton"></label>
+					  <div class="col-md-4">
+						 <button id="calcButton" name="calcButton" class="btn" onclick="getAisle()">Calculate</button>
+					  </div>
+					</div>
+
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="clearButton"></label>
+					  <div class="col-md-4">
+						 <button id="clearButton" name="clearButton" class="btn" onclick="clearList()">Clear</button>
+					  </div>
+					</div>
+
+					<!-- File Button
+					<div class="form-group">
+					  <label class="col-md-4 control-label" for="filebutton">Upload a List:</label>
+					  <div class="col-md-4">
+						 <input id="filebutton" name="filebutton" class="input-file" type="file">
+					  </div>
+					</div>-->
+
+				</fieldset>
+			</form>
+
+		</div>
+
+
+		<div id="map" class="page">
+			<div id="jsGrid">
+				<script src="addons/p5.min.js"></script>
+				<script src="addons/p5.dom.min.js"></script>
+				<script src="addons/p5.sound.min.js"></script>
+				<script src="sketch.js"></script>
 			</div>
-			
-			<script>
-				
-			</script>
-		
 		</div>
 
 		<div id="footer">
