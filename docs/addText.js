@@ -16,7 +16,7 @@ function validateForm(e) {
 }
 
 function clearList(){
-<	var f = document.getElementById("fullList");
+	var f = document.getElementById("fullList");
 	f.value=" ";
 }
 
