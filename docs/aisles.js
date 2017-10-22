@@ -1,3 +1,5 @@
+src="sketch.js";
+
 var aiseID = [
 	['p', "Apples"],
 	['4', "Baby Food"],
@@ -57,7 +59,7 @@ function getAisle(){
 		var initItem = arrayOfLines[i];
 		initItem = initItem.trim();
 		var myChar = findAisle(initItem);
-		functions(myChar);
+		getItems(myChar);
 	}
 
 }
