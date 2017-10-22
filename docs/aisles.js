@@ -1,6 +1,6 @@
 src="sketch.js";
 
-var aiseID = [
+var aisleID = [
 	['p', "Apples"],
 	['4', "Baby Food"],
 	['1', "Baking Nuts"],
@@ -15,7 +15,7 @@ var aiseID = [
 	['2', "Candy"],
 	['2', "Canned Fruit"],
 	['2', "Canned Tomatoes"],
-	['1', "Cereal"];
+	['1', "Cereal"],
 	['e', "Charcoal"],
 	['d', "Cheese"],
 	['3', "Chips"],
@@ -44,9 +44,13 @@ var aiseID = [
 ]
 
 function findAisle(c){
-	for(var i = 0; i < aiseID.length; i++){
-		if(c == aiseID[1][i]){
-			return aiselID[0][i];
+	//console.log("c is: " + c);
+	for(var i = 0; i < aisleID.length; i++){
+		var comp = aisleID[i][1];
+		//console.log("comp is: " + comp);
+		if(c == comp){
+			//console.log("final aisle is " + aisleID[i][0]);
+			return aisleID[i][0];
 		}
 	}
 }
@@ -55,11 +59,12 @@ function getAisle(){
 	var textArea = document.getElementById("fullList");
 	var arrayOfLines = textArea.value.split("\n");
 
-	for(var i = 0; i < arrayOfLines.length; i++){
+	for(var i = 0; i < arrayOfLines.length-1; i++){
 		var initItem = arrayOfLines[i];
 		initItem = initItem.trim();
 		var myChar = findAisle(initItem);
-		getItems(myChar);
+		//console.log("my itEM: " + initItem);
+		//getItems(myChar);
 	}
 
 }
