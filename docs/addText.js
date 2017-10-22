@@ -16,8 +16,8 @@ function validateForm(e) {
 }
 
 function clearList(){
-	var e = document.getElementById("fullList");
-	e.value = "";
+	var f = document.getElementById("fullList");
+	f.value=" ";
 }
 
 function setMap() {
