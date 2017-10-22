@@ -1,5 +1,3 @@
-
-
 function addItem(){
 		var e = document.getElementById("itemDrop");
 		var item = e.options[e.selectedIndex].text;
@@ -18,6 +16,20 @@ function validateForm(e) {
 }
 
 function clearList(){
+<<<<<<< HEAD
+	var f = document.getElementById("fullList");
+	f.value=" ";
+=======
 	var e = document.getElementById("fullList");
-	e.value="";
+	e.value = "";
+>>>>>>> 253b0ba3a91b5d923a008643899475ef0e4070f7
+}
+
+function setMap() {
+	var e = document.getElementById("maps");
+	var map = e.selectedIndex;
+	if (map == 1)
+		loadDemoMap();
+	else if (map == 0)
+		clearMap();
 }
