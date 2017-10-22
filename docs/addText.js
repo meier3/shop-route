@@ -3,8 +3,8 @@ function addItem(){
 		var item = e.options[e.selectedIndex].text;
 		//var fullText = document.getElementById("fullList").value;
 		//fullText += item;
-		var val = document.getElementById('fullList').val;
-		val = (val + item + '\n');
+		var val = document.getElementById('fullList');
+		val.append(item + '\n');
 		//document.getElementById("fullList").append(base);
 		//document.getElementById("itemInput").value = "";
 }
