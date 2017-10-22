@@ -3,7 +3,7 @@ function addItem(){
 		var item = e.options[e.selectedIndex].text;
 		//var fullText = document.getElementById("fullList").value;
 		//fullText += item;
-		var val = document.getElementById('fullList').value
+		var val = document.getElementById('fullList').val;
 		val = (val + item + '\n');
 		//document.getElementById("fullList").append(base);
 		//document.getElementById("itemInput").value = "";
