@@ -83,7 +83,7 @@ function draw(){
       //print("GridCOlorinDraw: ", grid[i][j]);
       fill(selection[grid[i][j]]);
       //print("GRID: ", grid[i][j]);
-      stroke(0);
+      stroke(230);
       rect(i*ppt, j*ppt, ppt-1, ppt-1);
     }
   }
@@ -191,7 +191,7 @@ function getItems(sec){
 
         aisleLocations.push(i);
         aisleLocations.push(j);
-        
+
       }
     }
   }
