@@ -17,13 +17,12 @@ function validateForm(e) {
 
 function clearList(){
 	var e = document.getElementById("fullList");
-	e.value="";
+	e.value = "";
 }
 
 function setMap() {
 	var e = document.getElementById("maps");
 	var map = e.selectedIndex;
-	print(map);
 	if (map == 1)
 		loadDemoMap();
 	else if (map == 0)

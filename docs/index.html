@@ -27,24 +27,41 @@
 
 	<!--- CONTENTS -->
 		<div id="page-wrapper">
-
+			
+			<script src="addText.js"> </script>
+			<script src="aisles.js"></script>
+		
+			
 			<div id="left-sidebar" class="page">
-
 				<form class="form-horizontal" action="" onsubmit="validateForm(event)">
 					<fieldset>
+						<legend>Change Map</legend>
+						<select id="maps" style="width:50%;">
+						  <option value="new">*create new</option>
+						  <option value="demo">Demo</option>
+						</select>
+						<button id="chooseMapButton" onclick="setMap()">Choose Map</button>
+					</fieldset>
+				</form>
+			</div>
 
-						<script src="addText.js"> </script>
-						<script src="aisles.js"></script>
-		
-						<!-- Form Name -->
+			<div id="map" class="page">
+				<div id="jsGrid">
+					<script src="addons/p5.min.js"></script>
+					<script src="addons/p5.dom.min.js"></script>
+					<script src="addons/p5.sound.min.js"></script>
+					<script src="sketch.js"></script>
+				</div>
+			</div>
+
+			<div id="right-sidebar" class="page">
+				
+				<form class="form-horizontal" action="" onsubmit="validateForm(event)">
+					<fieldset>
 						<legend>Your Shopping List</legend>
-
-
-						<br>
-
-						<!-- Input-->
+						
 						<div class="fullForm">
-
+							
 							<label>Select an item:
 								<select class="food" id="itemDrop">
 								  <option value="">Select Item</option>
@@ -91,8 +108,6 @@
 								</select>
 								<button id="addItemButton" onclick="addItem()">add</button>
 							</label>
-
-						<br>
 						</div>
 		<!--
 						<div class="form-group">
@@ -153,29 +168,6 @@
 						</div>-->
 				</fieldset>
 			</form>
-		</div>
-
-			<div id="map" class="page">
-				<div id="jsGrid">
-					<script src="addons/p5.min.js"></script>
-					<script src="addons/p5.dom.min.js"></script>
-					<script src="addons/p5.sound.min.js"></script>
-					<script src="sketch.js"></script>
-				</div>
-			</div>
-
-			<div id="right-sidebar" class="page">
-				
-				<form class="form-horizontal" action="" onsubmit="validateForm(event)">
-					<fieldset>
-						<legend>Change Map</legend>
-						<select id="maps" style="width:50%;">
-						  <option value="new">*create new</option>
-						  <option value="demo">Demo</option>
-						</select>
-						<button id="chooseMapButton" onclick="setMap()">Choose Map</button>
-					</fieldset>
-				</form>
 				
 			</div>
 			
