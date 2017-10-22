@@ -10,6 +10,7 @@ var colorAmount;
 var currentColor;
 var selectionNum;//Num of currently selected color
 var section;//array of strings with names of sections for store color coding
+var aisleLocations;
 
 
 function setup() {
@@ -141,21 +142,30 @@ function keyPressed(){
     case 187:
       loadDemoMap();
       break;
+    case 66:
+      getItems('b');
+      break;
+    case 68:
+      getItems('d');
+      break;
+    case 80:
+      getItems('p');
+      break;
   }
   currentColor = selection[selectionNum];
-  print("Selection = ", selectionNum);
-  print("Selected Color: ", currentColor);
+  //print("Selection = ", selectionNum);
+  //print("Selected Color: ", currentColor);
 }
 
 //Paint on Map
 function mouseDragged(){
-  print("Clicked");
-  print("MouseX: ", mouseX, " MouseY: ", mouseY);
+  //print("Clicked");
+  //print("MouseX: ", mouseX, " MouseY: ", mouseY);
   x = floor(mouseX/ppt);
   y = floor(mouseY/ppt);
-  print("gridX: ", x, " gridY: ", y);
+  //print("gridX: ", x, " gridY: ", y);
   grid[x][y]=selectionNum;
-  print("Grid Color: ",grid[x][y]);
+  //print("Grid Color: ",grid[x][y]);
 }
 
 function printMapData(){
@@ -168,56 +178,87 @@ function printMapData(){
 
 
 function getItems(sec){
-  var aisleLocations = new Array(2);
-  aisleLocations[0] = []; // X cord
-  aisleLocations[1] = []; // Y cord
+  aisleLocations = new Array();
+  //aisleLocations[0] = new Array(1); // X cord
+  //aisleLocations[1] = new Array(1); // Y cord
 
 
   for(var i = 0; i < columns; i++){
     for(var j = 0; j < rows; j++){
       var type = determineType(i,j);
+      //print("Type:b/f if: ",type);
       if(type == sec){
-        aisleLocations[0].push(i);
-        aisleLocations[1].push(j);
+        print("I: ", i," J: ",j);
+        //print("Type: ",type);
+        //var xy = xyCoord(i,j);
+        aisleLocations.push(i);
+        aisleLocations.push(j);
+        print("AISLE I: ", aisleLocations[aisleLocations.length-2]);
+        print("AISLE J: ", aisleLocations[aisleLocations.length-1])
+
+        print("aisleLocations #: ",aisleLocations.length/2);
       }
     }
   }
-
-  var temp = random(aisleLocations.length);
-  grid[aisleLocations[0][temp]][aisleLocations[1][temp]] = 10;//Yellow
+  for(var i = 0; i < aisleLocations.length; i++){
+    print(aisleLocations[i]);
+  }
+  var temp = floor(random((aisleLocations.length/2)))*2;
+  print("Rand: ", temp);
+  print("X Coord: ", aisleLocations[temp]);
+  print("Y Coord: ", aisleLocations[temp+1]);
+  //grid[aisleLocations[temp].getX][aisleLocations[temp].getY]=10; //Yellow
+  grid[aisleLocations[temp]][aisleLocations[temp+1]]=10; //Yellow
 
 }
 
 function determineType(x,y){
-  switch(grid[x][y]){
-    case 0:
-      break;
-    case 1:
-      break;
-    case 2:
-      return '1';
-    case 3:
-      return '2';
-    case 4:
-      return '3';
-    case 5:
-      return '4';
-    case 6:
-      return 'd';
-    case 7:
-      return 'b';
-    case 8:
-      return 'p';
-    case 9:
-      break;
-  }
-  print("An error has occured if the code has reached this print statement, i am dearly sorry");
+
+  var temp = grid[x][y];
+  if(temp==2) return '1';
+  else if(temp==3) return '2';
+  else if(temp==4) return '3';
+  else if(temp==5) return '4';
+  else if(temp==6) return 'd';
+  else if(temp==7) return 'b';
+  else if(temp==8) return 'p';
 }
 
 
-function itemSquare( x,  y){
-  grid[x][y]=10;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // This function is for demo only
@@ -258,6 +299,7 @@ function loadDemoMap(){
   testMap[31] = "99990000000000000000000000000000089";
   testMap[32] = "99990000000000666666668888888888889";
   testMap[33] = "99999999999999999999999999999999999";
+  testMap[34] = "99999999999999999999999999999999999";
 
   for(var i = 0; i<columns; i++){
       for(var j = 0; j < rows; j++){
