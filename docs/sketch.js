@@ -245,16 +245,13 @@ function determineType(x,y){
 }
 
 
-
-
-
-
-
-
-
-
-
-
+function clearMap(){
+  for(var i = 0; i < columns; i++){
+    for(var j = 0; j < rows; j++){
+      grid[i][j] = 0;
+    }
+  }
+}
 
 
 
