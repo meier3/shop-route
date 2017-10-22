@@ -166,12 +166,62 @@ function printMapData(){
   }
 }
 
+
+function getItems(sec){
+  var aisleLocations = new Array(2);
+  aisleLocations[0] = []; // X cord
+  aisleLocations[1] = []; // Y cord
+
+
+  for(var i = 0; i < columns; i++){
+    for(var j = 0; j < rows; j++){
+      var type = determineType(i,j);
+      if(type == sec){
+        aisleLocations[0].push(i);
+        aisleLocations[1].push(j);
+      }
+    }
+  }
+
+  var temp = random(aisleLocations.length);
+  grid[aisleLocations[0][temp]][aisleLocations[1][temp]] = 10;//Yellow
+
+}
+
+function determineType(x,y){
+  switch(grid[x][y]){
+    case 0:
+      break;
+    case 1:
+      break;
+    case 2:
+      return '1';
+    case 3:
+      return '2';
+    case 4:
+      return '3';
+    case 5:
+      return '4';
+    case 6:
+      return 'd';
+    case 7:
+      return 'b';
+    case 8:
+      return 'p';
+    case 9:
+      break;
+  }
+  print("An error has occured if the code has reached this print statement, i am dearly sorry");
+}
+
+
 function itemSquare( x,  y){
   grid[x][y]=10;
 }
 
 
 // This function is for demo only
+//Burry iT!!
 function loadDemoMap(){
   var testMap = Array(columns);
   testMap[0] = "99999999999999999999999999999999009";
