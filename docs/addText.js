@@ -22,6 +22,9 @@ function clearList(){
 =======
 	var e = document.getElementById("fullList");
 	e.value = "";
+<<<<<<< HEAD
+>>>>>>> 253b0ba3a91b5d923a008643899475ef0e4070f7
+=======
 >>>>>>> 253b0ba3a91b5d923a008643899475ef0e4070f7
 }
 
