@@ -341,8 +341,8 @@ function getAisle(){
     var initItem = arrayOfLines[i];
     initItem = initItem.trim();
     var myChar = findAisle(initItem);
-    console.log("aisle"+myChar);
-    //console.log("my itEM: " + initItem);
+    console.log("aisle is: "+ myChar);
+    console.log("my itEM: " + initItem);
     getItems(myChar);
   }
 
